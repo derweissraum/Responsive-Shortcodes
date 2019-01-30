@@ -1,0 +1,8 @@
+i.responsive-shortcodes-icon {
+	background-image: url('../images/tinymce-button.png');
+}
+
+/* Default max-height of 400px causes a scrollbar for scrolling just a couple of pixels. */
+div.mce-menu {
+	max-height: 410px;
+}
