@@ -87,7 +87,7 @@ function responsive_shortcodes_init() {
 	}
 
 	// Container zu eingebetteten Videos hinzufügen
-	function esr_embed_html( $html ) {
+	function rs_embed_html( $html ) {
 	return '<div class="video-block">' . $html . '</div>';
 	}
 	add_filter( 'embed_oembed_html', 'rs_embed_html', 10, 3 );
