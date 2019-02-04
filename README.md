@@ -1,6 +1,6 @@
 # Responsive Shortcodes
 Contributors: derweissraum  
-Tags: wordpress, shortcodes
+Tags: wordpress, shortcodes  
 Donate link:   
 Requires at least: 5.0  
 Tested up to: 5.0.3  
