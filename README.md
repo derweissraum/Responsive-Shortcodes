@@ -37,6 +37,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 - Remove FontAwesome with boxicons.com
 
+## [1.0.4]
+### Added
+- Plugin Updater
+
 ## [1.0.3]
 ### Added
 - Media Player Style and Media Player Control SVG
@@ -56,4 +60,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial Release.
 
+[1.0.4]: https://github.com/derweissraum/Responsive-Shortcodes/archive/1.0.4.zip
 [1.0.3]: https://github.com/derweissraum/Responsive-Shortcodes/archive/1.0.3.zip

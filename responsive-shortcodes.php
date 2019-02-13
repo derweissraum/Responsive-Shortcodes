@@ -2,10 +2,10 @@
 /**
  * Plugin Name: Responsive Shortcodes
  * Plugin URI:  https://docs.der-weissraum.de/docs/responsive-shortcodes/
- * Description: Provides a set of easy-to-use shortcuts for creating columns, buttons, tabs, and more.
- * Author:      der-weissraum
+ * Description: Bietet eine Reihe von benutzerfreundlichen Shortodes zum Erstellen von Spalten, Schaltflächen, Registerkarten und mehr.
+ * Author:      der weissraum - Studio für Gestaltung
  * Author URI:  https://www.der-weissraum.de
- * Version:     1.0.3
+ * Version:     1.0.4
  * Text Domain: responsive-shortcodes
  * Domain Path: /languages
  *
@@ -27,6 +27,158 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Plugin Updater
+add_filter('plugins_api', 'responsive_shortcodes_plugin_info', 20, 3);
+/*
+ * $res empty at this step 
+ * $action 'plugin_information'
+ * $args stdClass Object ( [slug] => woocommerce [is_ssl] => [fields] => Array ( [banners] => 1 [reviews] => 1 [downloaded] => [active_installs] => 1 ) [per_page] => 24 [locale] => en_US )
+ */	
+function responsive_shortcodes_plugin_info( $res, $action, $args ){
+ 
+	// do nothing if this is not about getting plugin information
+	if( $action !== 'plugin_information' )
+		return false;
+ 
+	// do nothing if it is not our plugin	
+	if( 'responsive-shortcodes' !== $args->slug )
+		return false;
+ 
+	// trying to get from cache first, to disable cache comment 25,35,36,37,39
+	if( false == $remote = get_transient( 'misha_upgrade_test-updater' ) ) {
+ 
+		// info.json is the file with the actual plugin information on your server
+		$remote = wp_remote_get( 'https://docs.der-weissraum.de/updates/responsive-shortcodes/info.json', array(
+			'timeout' => 10,
+			'headers' => array(
+				'Accept' => 'application/json'
+			) )
+		);
+ 
+		if ( !is_wp_error( $remote ) && isset( $remote['response']['code'] ) && $remote['response']['code'] == 200 && !empty( $remote['body'] ) ) {
+			set_transient( 'misha_upgrade_test-updater', $remote, 43200 ); // 12 hours cache
+		}
+ 
+	}
+ 
+	if( $remote ) {
+ 
+		$remote = json_decode( $remote['body'] );
+		$res = new stdClass();
+		$res->name = $remote->name;
+		$res->slug = 'responsive-shortcodes';
+		$res->version = $remote->version;
+		$res->tested = $remote->tested;
+		$res->requires = $remote->requires;
+		$res->author = '<a href="https://www.der-weissraum.de">der weissraum - Studio für Gestaltungs</a>';
+		$res->author_profile = 'https://profiles.wordpress.org/rudrastyh';
+		$res->download_link = $remote->download_url;
+		$res->trunk = $remote->download_url;
+		$res->last_updated = $remote->last_updated;
+		$res->sections = array(
+			'description' => $remote->sections->description,
+			'installation' => $remote->sections->installation,
+			'changelog' => $remote->sections->changelog
+			// you can add your custom sections (tabs) here 
+		);
+		if( !empty( $remote->sections->screenshots ) ) {
+			$res->sections['screenshots'] = $remote->sections->screenshots;
+		}
+ 
+		$res->banners = array(
+		 'low' => 'https://docs.der-weissraum.de/updates/responsive-shortcodes/banner-772x250.png',
+         'high' => 'https://docs.der-weissraum.de/updates/responsive-shortcodes/banner-1544x500.png'
+		);
+           	return $res;
+ 
+	}
+ 
+	return false;
+ 
+}
+add_filter('site_transient_update_plugins', 'responsive_shortcodes_push_update' );
+ 
+function responsive_shortcodes_push_update( $transient ){
+ 
+	if ( empty($transient->checked ) ) {
+            return $transient;
+        }
+ 
+	// trying to get from cache first, to disable cache comment 86,96,97,98,100
+	if( false == $remote = get_transient( 'misha_upgrade_test-updater' ) ) {
+ 
+		// info.json is the file with the actual plugin information on your server
+		$remote = wp_remote_get( 'https://docs.der-weissraum.de/updates/responsive-shortcodes/info.json', array(
+			'timeout' => 10,
+			'headers' => array(
+				'Accept' => 'application/json'
+			) )
+		);
+ 
+		if ( !is_wp_error( $remote ) && isset( $remote['response']['code'] ) && $remote['response']['code'] == 200 && !empty( $remote['body'] ) ) {
+			set_transient( 'misha_upgrade_test-updater', $remote, 43200 ); // 12 hours cache
+		}
+ 
+	}
+ 
+	if( $remote ) {
+ 
+		$remote = json_decode( $remote['body'] );
+		if( $remote && version_compare( '1.0.4', $remote->version, '<' )
+			&& version_compare($remote->requires, get_bloginfo('version'), '<' ) ) {
+				$res = new stdClass();
+				$res->slug = 'responsive-shortcodes';
+				$res->plugin = 'responsive-shortcodes/responsive-shortcodes.php';
+				$res->new_version = $remote->version;
+				$res->tested = $remote->tested;
+				$res->package = $remote->download_url;
+				$res->url = $remote->homepage;
+				$res->compatibility = new stdClass();
+           		$transient->response[$res->plugin] = $res;
+           		//$transient->checked[$res->plugin] = $remote->version;
+           	}
+ 
+	}
+        return $transient;
+}
+
+add_action( 'upgrader_process_complete', 'responsive_shortcodes_after_update', 10, 2 );
+ 
+function responsive_shortcodes_after_update( $upgrader_object, $options ) {
+	if ( $options['action'] == 'update' && $options['type'] === 'plugin' )  {
+		delete_transient( 'misha_upgrade_test-updater' );
+	}
+}
+
+// Shows the View details Link
+add_filter('plugin_row_meta', function($plugin_meta, $pluginFile) {
+    //Only modify our own plugin.
+    if (plugin_basename(__FILE__) === $pluginFile) {
+
+        //This should refer to the variable holding your PUC-instance
+        global $myUpdateChecker;
+
+        //Check if the details link is already among the links (because there is an update)
+        foreach ($plugin_meta as $existing_link) {
+            if (strpos($existing_link, 'tab=plugin-information') !== false) {
+                return $plugin_meta;
+            }
+        }
+
+        //Get plugin info (need the name to mirror WP's own method)
+        $plugin_info = get_plugin_data(__FILE__);
+
+        //Show the link using the same method WP does (which is totally overkill)
+        $plugin_meta[] = sprintf( '<a href="%s" class="thickbox open-plugin-details-modal" aria-label="%s" data-title="%s">%s</a>',
+                esc_url( network_admin_url( 'plugin-install.php?tab=plugin-information&plugin=responsive-shortcodes&TB_iframe=true&width=600&height=550' ) ),
+                esc_attr( sprintf( __( 'More information about %s' ), $plugin_info['Name'] ) ),
+                esc_attr( $plugin_info['Name'] ),
+                __( 'View details' )
+        );
+    }
+    return $plugin_meta;
+}, 10, 2);
+
 
 /**
  * Define plugin constants
@@ -40,7 +192,7 @@ define( 'RESPONSIVE_SHORTCODES_PLUGIN_DIR_PATH', dirname( __FILE__ ) );
 define( 'RESPONSIVE_SHORTCODES_PLUGIN_DIR_URL',  plugin_dir_url( __FILE__ ) );
 
 // Plugin version. WordPress, please provide a way to get this automatically on the frontend!!!
-define( 'RESPONSIVE_SHORTCODES_VERSION', '1.0.3' );
+define( 'RESPONSIVE_SHORTCODES_VERSION', '1.0.4' );
 
 
 /**
