@@ -45,7 +45,7 @@ function responsive_shortcodes_plugin_info( $res, $action, $args ){
 		return false;
  
 	// trying to get from cache first, to disable cache comment 25,35,36,37,39
-	if( false == $remote = get_transient( 'misha_upgrade_test-updater' ) ) {
+	if( false == $remote = get_transient( 'dw_upgrade_responsive-shortcode-updater' ) ) {
  
 		// info.json is the file with the actual plugin information on your server
 		$remote = wp_remote_get( 'https://docs.der-weissraum.de/updates/responsive-shortcodes/info.json', array(
@@ -56,7 +56,7 @@ function responsive_shortcodes_plugin_info( $res, $action, $args ){
 		);
  
 		if ( !is_wp_error( $remote ) && isset( $remote['response']['code'] ) && $remote['response']['code'] == 200 && !empty( $remote['body'] ) ) {
-			set_transient( 'misha_upgrade_test-updater', $remote, 43200 ); // 12 hours cache
+			set_transient( 'dw_upgrade_responsive-shortcode-updater', $remote, 43200 ); // 12 hours cache
 		}
  
 	}
@@ -105,7 +105,7 @@ function responsive_shortcodes_push_update( $transient ){
         }
  
 	// trying to get from cache first, to disable cache comment 86,96,97,98,100
-	if( false == $remote = get_transient( 'misha_upgrade_test-updater' ) ) {
+	if( false == $remote = get_transient( 'dw_upgrade_responsive-shortcode-updater' ) ) {
  
 		// info.json is the file with the actual plugin information on your server
 		$remote = wp_remote_get( 'https://docs.der-weissraum.de/updates/responsive-shortcodes/info.json', array(
@@ -116,7 +116,7 @@ function responsive_shortcodes_push_update( $transient ){
 		);
  
 		if ( !is_wp_error( $remote ) && isset( $remote['response']['code'] ) && $remote['response']['code'] == 200 && !empty( $remote['body'] ) ) {
-			set_transient( 'misha_upgrade_test-updater', $remote, 43200 ); // 12 hours cache
+			set_transient( 'dw_upgrade_responsive-shortcode-updater', $remote, 43200 ); // 12 hours cache
 		}
  
 	}
@@ -146,7 +146,7 @@ add_action( 'upgrader_process_complete', 'responsive_shortcodes_after_update', 1
  
 function responsive_shortcodes_after_update( $upgrader_object, $options ) {
 	if ( $options['action'] == 'update' && $options['type'] === 'plugin' )  {
-		delete_transient( 'misha_upgrade_test-updater' );
+		delete_transient( 'dw_upgrade_responsive-shortcode-updater' );
 	}
 }
 
