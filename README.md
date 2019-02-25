@@ -42,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.0.5]
 ### Added
 - shortcode "Divider"
+- smooth scrolling etc, only for the divider shortcode
 
 ## [1.0.4]
 ### Added
