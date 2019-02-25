@@ -2,8 +2,8 @@
 Contributors: derweissraum  
 Tags: wordpress, shortcodes  
 Donate link:   
-Requires at least: 5.0  
-Tested up to: 5.0.3  
+Requires at least: 4.8.1
+Tested up to: 5.1  
 Stable tag:   
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
@@ -37,6 +37,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 - Remove FontAwesome with boxicons.com
 
+## [1.0.5]
+### Added
+- shortcode "Divider"
+
 ## [1.0.4]
 ### Added
 - Plugin Updater
@@ -60,5 +64,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial Release.
 
+[1.0.5]: https://github.com/derweissraum/Responsive-Shortcodes/archive/1.0.5.zip
 [1.0.4]: https://github.com/derweissraum/Responsive-Shortcodes/archive/1.0.4.zip
 [1.0.3]: https://github.com/derweissraum/Responsive-Shortcodes/archive/1.0.3.zip

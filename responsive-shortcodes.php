@@ -5,7 +5,7 @@
  * Description: Bietet eine Reihe von benutzerfreundlichen Shortodes zum Erstellen von Spalten, Schaltflächen, Registerkarten und mehr.
  * Author:      der weissraum - Studio für Gestaltung
  * Author URI:  https://www.der-weissraum.de
- * Version:     1.0.4
+ * Version:     1.0.5
  * Text Domain: responsive-shortcodes
  * Domain Path: /languages
  *
@@ -124,7 +124,7 @@ function responsive_shortcodes_push_update( $transient ){
 	if( $remote ) {
  
 		$remote = json_decode( $remote['body'] );
-		if( $remote && version_compare( '1.0.4', $remote->version, '<' )
+		if( $remote && version_compare( '1.0.5', $remote->version, '<' )
 			&& version_compare($remote->requires, get_bloginfo('version'), '<' ) ) {
 				$res = new stdClass();
 				$res->slug = 'responsive-shortcodes';
@@ -192,7 +192,7 @@ define( 'RESPONSIVE_SHORTCODES_PLUGIN_DIR_PATH', dirname( __FILE__ ) );
 define( 'RESPONSIVE_SHORTCODES_PLUGIN_DIR_URL',  plugin_dir_url( __FILE__ ) );
 
 // Plugin version. WordPress, please provide a way to get this automatically on the frontend!!!
-define( 'RESPONSIVE_SHORTCODES_VERSION', '1.0.4' );
+define( 'RESPONSIVE_SHORTCODES_VERSION', '1.0.5' );
 
 
 /**
