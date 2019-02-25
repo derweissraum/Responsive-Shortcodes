@@ -92,6 +92,15 @@
 					},
 				},
 
+				/* Divider */
+				{
+					text:    'Trennung',
+					onclick: function() {
+						editor.insertContent( '[divider]' );
+					},
+				},
+
+
 				/* Highlight */
 				{
 					text:    'Hervorhebung',

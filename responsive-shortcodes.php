@@ -207,6 +207,7 @@ require( RESPONSIVE_SHORTCODES_PLUGIN_DIR_PATH . '/includes/shortcode-functions/
 require( RESPONSIVE_SHORTCODES_PLUGIN_DIR_PATH . '/includes/shortcode-functions/button.php' );
 require( RESPONSIVE_SHORTCODES_PLUGIN_DIR_PATH . '/includes/shortcode-functions/call-to-action.php' );
 require( RESPONSIVE_SHORTCODES_PLUGIN_DIR_PATH . '/includes/shortcode-functions/clear-floats.php' );
+require( RESPONSIVE_SHORTCODES_PLUGIN_DIR_PATH . '/includes/shortcode-functions/divider.php' );
 require( RESPONSIVE_SHORTCODES_PLUGIN_DIR_PATH . '/includes/shortcode-functions/columns.php' );
 require( RESPONSIVE_SHORTCODES_PLUGIN_DIR_PATH . '/includes/shortcode-functions/highlight.php' );
 require( RESPONSIVE_SHORTCODES_PLUGIN_DIR_PATH . '/includes/shortcode-functions/icon.php' );
@@ -375,6 +376,7 @@ function responsive_shortcodes_get_shortcodes() {
 		'clear_floats'   => 'responsive_shortcodes_clear_floats_shortcode',
 		'columns'        => 'responsive_shortcodes_columns_shortcode',
 		'column'         => 'responsive_shortcodes_column_shortcode',
+		'divider'	     => 'responsive_shortcodes_divider_shortcode',
 		'highlight'      => 'responsive_shortcodes_highlight_shortcode',
 		'icon'           => 'responsive_shortcodes_icon_shortcode',
 		'tabs'           => 'responsive_shortcodes_tabs_shortcode',
