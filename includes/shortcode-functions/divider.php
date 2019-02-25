@@ -31,7 +31,9 @@ function responsive_shortcodes_divider_shortcode( $atts, $content = '' ) {
 	}
 
 	$output .= sprintf( '<div class="rs-divider%s">', $additional_classes );
-	$output .= '<a href="#">Nach oben</a></div>';
+	$output .= '<a href="#top">Nach oben</a></div>';
+
+	wp_enqueue_script( 'rs-scroll' );
 
 	return apply_filters( 'responsive_shortcodes_divider_shortcode', $output, $atts, $content );
 }

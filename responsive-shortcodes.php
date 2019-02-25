@@ -69,9 +69,10 @@ function responsive_shortcodes_plugin_info( $res, $action, $args ){
 		$res->slug = 'responsive-shortcodes';
 		$res->version = $remote->version;
 		$res->tested = $remote->tested;
+		$res->requires_php = $remote->requires_php;
 		$res->requires = $remote->requires;
 		$res->author = '<a href="https://www.der-weissraum.de">der weissraum - Studio für Gestaltungs</a>';
-		$res->author_profile = 'https://profiles.wordpress.org/rudrastyh';
+		$res->author_profile = 'https://profiles.wordpress.org/derweissraum/';
 		$res->download_link = $remote->download_url;
 		$res->trunk = $remote->download_url;
 		$res->last_updated = $remote->last_updated;
@@ -295,6 +296,7 @@ function responsive_shortcodes_enqueue_scripts() {
 	wp_register_script( 'rs-accordion', RESPONSIVE_SHORTCODES_PLUGIN_DIR_URL . 'js/accordion.js', array( 'jquery' ), true );
 	wp_register_script( 'rs-tabs',      RESPONSIVE_SHORTCODES_PLUGIN_DIR_URL . 'js/tabs.js',      array( 'jquery' ), true );
 	wp_register_script( 'rs-toggle',    RESPONSIVE_SHORTCODES_PLUGIN_DIR_URL . 'js/toggle.js',    array( 'jquery' ), true );
+	wp_register_script( 'rs-scroll',    RESPONSIVE_SHORTCODES_PLUGIN_DIR_URL . 'js/smooth-scroll.js',    array( 'jquery' ), true );
 
 	// Enqueue bundled CSS only if the current theme does not declare support for the plugin.
 	if ( ! current_theme_supports( 'rs-responsive-shortcodes' ) ) {
