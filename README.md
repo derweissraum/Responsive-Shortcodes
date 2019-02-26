@@ -1,12 +1,12 @@
 # Responsive Shortcodes
-Contributors: derweissraum
-Tags: shortcodes, shortcode, tools
-Requires at least: 4.8.1
-Tested up to: 5.1
-Requires PHP: 7.0
-Stable tag: 1.0.5
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html 
+Contributors: derweissraum  
+Tags: shortcodes, shortcode, tools  
+Requires at least: 4.8.1  
+Tested up to: 5.1  
+Requires PHP: 7.0  
+Stable tag: 1.0.5  
+License: GPLv2 or later  
+License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
 
 Provides a set of easy-to-use shortcuts for creating columns, buttons, tabs, and more.
