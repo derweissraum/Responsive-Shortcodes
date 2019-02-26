@@ -71,7 +71,7 @@ function responsive_shortcodes_plugin_info( $res, $action, $args ){
 		$res->tested = $remote->tested;
 		$res->requires_php = $remote->requires_php;
 		$res->requires = $remote->requires;
-		$res->author = '<a href="https://www.der-weissraum.de">der weissraum - Studio für Gestaltungs</a>';
+		$res->author = '<a href="https://www.der-weissraum.de">der weissraum - Studio für Gestaltung</a>';
 		$res->author_profile = 'https://profiles.wordpress.org/derweissraum/';
 		$res->download_link = $remote->download_url;
 		$res->trunk = $remote->download_url;

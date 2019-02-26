@@ -15,7 +15,7 @@ Provides a set of easy-to-use shortcuts for creating columns, buttons, tabs, and
 ## Description
 
 ### Installation
-Upload the plugin to your blog, activate it, that\'s it!
+Laden Sie das Plugin in Ihren Blog hoch, aktivieren Sie es, das war's!
 
 
 ### Requirements
