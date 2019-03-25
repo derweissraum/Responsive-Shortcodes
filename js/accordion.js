@@ -2,6 +2,10 @@ jQuery(document).ready(function($){
 
 	$('.rs-accordion').each(function(index, element){
 		$(this).find('.accordion-item-content').hide().first().show().parent().addClass('active');
+
+		// OPTIONAL - All Accordion-Tabs are initially closed
+		// $(this).find('.accordion-item-content').hide().first().removeClass('active');
+
 	});
 
 	$('.rs-accordion .accordion-item-title a').click(function(event){
