@@ -48,7 +48,7 @@
 				{
 					text:    'Hinweis',
 					onclick: function() {
-						editor.insertContent( '[alert color="red" icon="alarm"]Hier steht der Hinweistext[/alert]' );
+						editor.insertContent( '[alert color="red" icon="exclamation-triangle"]Hier steht der Hinweistext[/alert]' );
 					},
 				},
 
