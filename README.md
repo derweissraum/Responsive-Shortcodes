@@ -2,7 +2,7 @@
 Contributors: derweissraum  
 Tags: shortcodes, shortcode, tools  
 Requires at least: 4.8.1  
-Tested up to: 5.2.3  
+Tested up to: 5.2.4  
 Requires PHP: 7.0  
 Stable tag: 1.0.5  
 License: GPLv2 or later  
