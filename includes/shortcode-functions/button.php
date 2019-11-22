@@ -14,6 +14,7 @@ function responsive_shortcodes_button_shortcode( $atts, $content = '' ) {
 		'target' => '',
 		'title'  => '',
 		'url'    => '',
+		'download'    => '',
 	), $atts, 'button' ) );
 
 	if ( ! $url || ! $content ) {
@@ -37,6 +38,12 @@ function responsive_shortcodes_button_shortcode( $atts, $content = '' ) {
 	if ( $target ) {
 		$additional_atts .= sprintf( ' target="%s"',
 			esc_attr( $target )
+		);
+	}
+
+	if ( $download ) {
+		$additional_atts .= sprintf( ' download="%s"',
+			esc_attr( $download )
 		);
 	}
 
