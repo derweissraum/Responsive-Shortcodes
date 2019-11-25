@@ -3,8 +3,8 @@
  * Plugin Name: Responsive Shortcodes
  * Plugin URI:  https://docs.der-weissraum.de/docs/responsive-shortcodes/
  * Description: Bietet eine Reihe von benutzerfreundlichen Shortodes zum Erstellen von Spalten, Schaltflächen, Registerkarten und mehr.
- * Author:      der weissraum - Studio für Gestaltung
- * Author URI:  https://www.der-weissraum.de
+ * Author:      seabokas
+ * Author URI:  https://docs.der-weissraum.de/docs/responsive-shortcodes/
  * Version:     1.0.5
  * Text Domain: responsive-shortcodes
  * Domain Path: /languages
