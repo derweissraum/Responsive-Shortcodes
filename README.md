@@ -1,5 +1,5 @@
 # Responsive Shortcodes
-Contributors: derweissraum  
+Contributors: seabokas  
 Tags: shortcodes, shortcode, tools  
 Requires at least: 4.8.1  
 Tested up to: 5.3  
