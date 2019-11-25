@@ -27,7 +27,7 @@ Laden Sie das Plugin in Ihren Blog hoch, aktivieren Sie es, das war's!
 * NL
 
 ### Authors
-derweissraum (https://github.com/derweissraum/)
+seabokas (https://github.com/seabokas/)
 
 
 # Changelog 
@@ -67,6 +67,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial Release.
 
-[1.0.5]: https://github.com/derweissraum/Responsive-Shortcodes/archive/1.0.5.zip
-[1.0.4]: https://github.com/derweissraum/Responsive-Shortcodes/archive/1.0.4.zip
-[1.0.3]: https://github.com/derweissraum/Responsive-Shortcodes/archive/1.0.3.zip
+[1.0.5]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.5.zip
+[1.0.4]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.4.zip
+[1.0.3]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.3.zip
