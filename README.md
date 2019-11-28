@@ -4,7 +4,7 @@ Tags: shortcodes, shortcode, tools
 Requires at least: 4.8.1  
 Tested up to: 5.3  
 Requires PHP: 7.0  
-Stable tag: 1.0.5  
+Stable tag: 1.0.6  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -39,6 +39,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 - Remove FontAwesome with boxicons.com
 
+## [1.0.6]
+### Update
+- Domain
+
 ## [1.0.5]
 ### Added
 - shortcode "Divider"
@@ -67,6 +71,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial Release.
 
+[1.0.6]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.6.zip
 [1.0.5]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.5.zip
 [1.0.4]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.4.zip
 [1.0.3]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.3.zip
