@@ -109,7 +109,7 @@ function responsive_shortcodes_push_update( $transient ){
 	if( false == $remote = get_transient( 'dw_upgrade_responsive-shortcode-updater' ) ) {
  
 		// info.json is the file with the actual plugin information on your server
-		$remote = wp_remote_get( 'https://docs.stefanbrockhaus.destefanbrockhaus.de/updates/responsive-shortcodes/info.json', array(
+		$remote = wp_remote_get( 'https://docs.stefanbrockhaus.de/updates/responsive-shortcodes/info.json', array(
 			'timeout' => 10,
 			'headers' => array(
 				'Accept' => 'application/json'
