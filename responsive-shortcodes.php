@@ -1,16 +1,16 @@
 <?php
 /**
  * Plugin Name: Responsive Shortcodes
- * Plugin URI:  https://docs.der-weissraum.de/docs/responsive-shortcodes/
+ * Plugin URI:  https://docs.stefanbrockhaus.de/docs/responsive-shortcodes/
  * Description: Bietet eine Reihe von benutzerfreundlichen Shortodes zum Erstellen von Spalten, Schaltflächen, Registerkarten und mehr.
  * Author:      seabokas
- * Author URI:  https://docs.der-weissraum.de/docs/responsive-shortcodes/
+ * Author URI:  https://docs.stefanbrockhaus.de/docs/responsive-shortcodes/
  * Version:     1.0.5
  * Text Domain: responsive-shortcodes
  * Domain Path: /languages
  *
  *
- * Copyright (C) 2018 der-weissraum
+ * Copyright (C) 2018 Stefan Brockhaus
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -48,7 +48,7 @@ function responsive_shortcodes_plugin_info( $res, $action, $args ){
 	if( false == $remote = get_transient( 'dw_upgrade_responsive-shortcode-updater' ) ) {
  
 		// info.json is the file with the actual plugin information on your server
-		$remote = wp_remote_get( 'https://docs.der-weissraum.de/updates/responsive-shortcodes/info.json', array(
+		$remote = wp_remote_get( 'https://docs.stefanbrockhaus.de/updates/responsive-shortcodes/info.json', array(
 			'timeout' => 10,
 			'headers' => array(
 				'Accept' => 'application/json'
@@ -71,8 +71,8 @@ function responsive_shortcodes_plugin_info( $res, $action, $args ){
 		$res->tested = $remote->tested;
 		$res->requires_php = $remote->requires_php;
 		$res->requires = $remote->requires;
-		$res->author = '<a href="https://www.der-weissraum.de">der weissraum - Studio für Gestaltung</a>';
-		$res->author_profile = 'https://profiles.wordpress.org/derweissraum/';
+		$res->author = '<a href="https://www.stefanbrockhaus.de">Stefan Brockhaus</a>';
+		$res->author_profile = 'https://profiles.wordpress.org/seabokas/';
 		$res->download_link = $remote->download_url;
 		$res->trunk = $remote->download_url;
 		$res->last_updated = $remote->last_updated;
@@ -87,8 +87,8 @@ function responsive_shortcodes_plugin_info( $res, $action, $args ){
 		}
  
 		$res->banners = array(
-		 'low' => 'https://docs.der-weissraum.de/updates/responsive-shortcodes/banner-772x250.png',
-         'high' => 'https://docs.der-weissraum.de/updates/responsive-shortcodes/banner-1544x500.png'
+		 'low' => 'https://docs.stefanbrockhaus.de/updates/responsive-shortcodes/banner-772x250.png',
+         'high' => 'https://docs.stefanbrockhaus.de/updates/responsive-shortcodes/banner-1544x500.png'
 		);
            	return $res;
  
@@ -109,7 +109,7 @@ function responsive_shortcodes_push_update( $transient ){
 	if( false == $remote = get_transient( 'dw_upgrade_responsive-shortcode-updater' ) ) {
  
 		// info.json is the file with the actual plugin information on your server
-		$remote = wp_remote_get( 'https://docs.der-weissraum.de/updates/responsive-shortcodes/info.json', array(
+		$remote = wp_remote_get( 'https://docs.stefanbrockhaus.destefanbrockhaus.de/updates/responsive-shortcodes/info.json', array(
 			'timeout' => 10,
 			'headers' => array(
 				'Accept' => 'application/json'
