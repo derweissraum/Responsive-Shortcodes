@@ -245,7 +245,7 @@ function responsive_shortcodes_init() {
 	return '<div class="video-block">' . $html . '</div>';
 	}
 	add_filter( 'embed_oembed_html', 'rs_embed_html', 10, 3 );
-	add_filter( 'video_embed_html', 'rs_embed_html' ); // für Jetpack
+	// add_filter( 'video_embed_html', 'rs_embed_html' ); // für Jetpack
 
 	// Add Media Player Styles
 	add_action( 'wp_footer', 'esr_theme_footer_scripts' );
