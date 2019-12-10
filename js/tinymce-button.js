@@ -11,7 +11,7 @@
 				{
 					text:    'Dokumentation anzeigen',
 					onclick: function() {
-						window.open('https://docs.der-weissraum.de/docs/responsive-shortcodes/verwendung/');
+						window.open('https://docs.stefanbrockhaus.de/docs/responsive-shortcodes/verwendung/');
 					},
 				},
 
