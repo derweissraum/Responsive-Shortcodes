@@ -2,9 +2,9 @@
 Contributors: seabokas  
 Tags: shortcodes, shortcode, tools  
 Requires at least: 4.8.1  
-Tested up to: 5.3  
+Tested up to: 5.7.2  
 Requires PHP: 7.0  
-Stable tag: 1.0.6  
+Stable tag: 1.0.7  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -15,7 +15,7 @@ Provides a set of easy-to-use shortcuts for creating columns, buttons, tabs, and
 ## Description
 
 ### Installation
-Laden Sie das Plugin in Ihren Blog hoch, aktivieren Sie es, das war's!
+Upload the plugin to your blog, activate it, that's it!
 
 
 ### Requirements
@@ -38,6 +38,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 - Remove FontAwesome with boxicons.com
+
+## [1.0.7]
+### Removed
+- Plugin Updater, as this function generates an error! Put on hold for the time being.
 
 ## [1.0.6]
 ### Update
@@ -71,6 +75,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial Release.
 
+[1.0.6]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.7.zip
 [1.0.6]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.6.zip
 [1.0.5]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.5.zip
 [1.0.4]: https://github.com/seabokas/Responsive-Shortcodes/archive/1.0.4.zip
